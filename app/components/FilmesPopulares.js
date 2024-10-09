@@ -11,7 +11,7 @@ function FilmesPopulares({ filmes }) {
     }
     return (
         <View>
-            <Text className='text-white text-xl mx-4 mb-5'>Filmes populares</Text>
+            <Text className='text-white text-xl mx-4 mb-5'>Populares</Text>
             <FlatList
                 data={filmes}
                 keyExtractor={(item) => item.toString()}

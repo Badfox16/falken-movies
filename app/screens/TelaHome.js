@@ -5,10 +5,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { Bars3CenterLeftIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import FilmesPopulares from '../components/FilmesPopulares'
 import { styles } from '../themes'
+import ListaFilmes from '../components/ListaFilmes'
 
 const ios = Platform.OS === 'ios'
 function TelaHome() {
 const [populares, setPopulares] = useState([1,2,3])
+const [melhores, setMelhores] = useState([1,2,3])
+const [brevemente, setBrevemente] = useState([1,2,3])
     return (
         <View className="flex-1 bg-neutral-800">
             {/* Barra de Pesquisa e Logo */}
@@ -30,6 +33,12 @@ const [populares, setPopulares] = useState([1,2,3])
             >
                 {/* Carrosel para filmes populares */}
                 <FilmesPopulares filmes={populares}/>
+
+                {/* Linha para os melhores filmes */}
+                <ListaFilmes titulo="Melhores filmes" filmes={melhores}/>
+
+                {/* Linha para filmes em breve */}
+                <ListaFilmes titulo="Em breve" filmes={brevemente}/>
             </ScrollView>
         </View>
     )
